@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/logo.webp" type="image/x-icon">
+</head>
+<body>
+  <div class="header">
+    <h2>Wishlist</h2>
+    <div>
+      <button onclick="toggleMode()">Toggle Mode</button>
+      <button onclick="goHome()">Home</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div id="wishlist-items" class="product-list"></div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
