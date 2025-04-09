@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Shop</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="./img/logo.webp" type="image/x-icon">
 </head>
 <body>
   <div class="header">
-    <h2>🛒My Store</h2>
+    <h2 class="main-logo">🛒 My Store</h2>
     <div>
       <button onclick="toggleMode()">Toggle Mode</button>
       <button onclick="goToWishlist()">Wishlist</button>
+      <button onclick="logout()">Logout</button>
     </div>
   </div>
 
@@ -21,6 +23,10 @@
       <label><input type="checkbox" value="women's clothing" onchange="filterProducts()"> Women's Clothing</label>
       <label><input type="checkbox" value="jewelery" onchange="filterProducts()"> Jewelery</label>
       <label><input type="checkbox" value="electronics" onchange="filterProducts()"> Electronics</label>
+
+      <h4>Price Range</h4>
+      <label>Min: <input type="number" id="min-price" oninput="filterProducts()" placeholder="0"></label>
+      <label>Max: <input type="number" id="max-price" oninput="filterProducts()" placeholder="1000"></label>
     </div>
 
     <div class="main">

@@ -29,6 +29,12 @@ function login() {
   }
 }
 
+function logout() {
+  localStorage.removeItem("loggedIn");
+  alert("Logged out successfully!");
+  window.location.href = "login.html";
+}
+
 function checkAuth() {
   const isProtectedPage =
     location.pathname.includes("index.html") ||
@@ -85,10 +91,19 @@ function searchProducts() {
 }
 
 function filterProducts() {
-  const checks = document.querySelectorAll(".sidebar input:checked");
+  const checks = document.querySelectorAll(".sidebar input[type='checkbox']:checked");
   const values = Array.from(checks).map((c) => c.value);
-  const filtered = products.filter((p) => values.includes(p.category));
-  displayProducts(values.length ? filtered : products);
+
+  const min = parseFloat(document.getElementById("min-price").value) || 0;
+  const max = parseFloat(document.getElementById("max-price").value) || Infinity;
+
+  const filtered = products.filter((p) => {
+    const matchesCategory = values.length ? values.includes(p.category) : true;
+    const matchesPrice = p.price >= min && p.price <= max;
+    return matchesCategory && matchesPrice;
+  });
+
+  displayProducts(filtered);
 }
 
 function toggleWishlist(id) {

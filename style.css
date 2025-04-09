@@ -112,8 +112,8 @@ button {
 }
 
 .dark #search {
-  color: black; /* ✅ Fixed: black text in dark mode */
-  background: #f5f5f5;
+  color: white; 
+  
 }
 
 #search:focus {
@@ -240,7 +240,6 @@ button {
   color: #f0f0f0;
 }
 
-/* ✅ Fix for Login/Signup Pages */
 .auth-container {
   max-width: 400px;
   margin: 100px auto;
@@ -313,4 +312,13 @@ button {
     gap: 10px;
     align-items: flex-start;
   }
+}
+
+
+
+
+
+
+.main-logo {
+  cursor: pointer;
 }
